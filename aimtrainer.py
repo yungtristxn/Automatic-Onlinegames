@@ -22,10 +22,3 @@ if __name__ == '__main__':
 
         if keyboard.is_pressed('k'):
             quit()
-
-
-
-
-                
-
-      
