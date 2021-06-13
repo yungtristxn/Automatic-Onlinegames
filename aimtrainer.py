@@ -1,4 +1,4 @@
-import pyautogui
+from pyautogui import locateCenterOnScreen
 import win32api
 import win32con
 import keyboard
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     target = fr'{dir_path}\Targets\Target.png'
     while True:
         try:    #region=(552, 302, 800, 470) for aimtrainer.io in fullscreen [1920x1080]  /// size of target is 5
-            x = tuple(pyautogui.locateCenterOnScreen(target,region=(552, 302, 800, 470),grayscale = True,  confidence=0.8))
+            x = tuple(locateCenterOnScreen(target,region=(552, 302, 800, 470), grayscale=True,  confidence=0.8))
             click(x[0],x[1])
         except TypeError:
             pass
