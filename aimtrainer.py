@@ -1,8 +1,8 @@
 from pyautogui import locateCenterOnScreen
 from win32api import SetCursorPos,mouse_event
 from win32con import MOUSEEVENTF_LEFTDOWN,MOUSEEVENTF_LEFTUP
-import keyboard
-import os 
+from keyboard import is_pressed
+from os import path
 
 
 def click(x, y):
@@ -11,7 +11,7 @@ def click(x, y):
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0)
 
 if __name__ == '__main__':
-    dir_path = os.path.dirname(os.path.realpath(__file__))
+    dir_path = path.dirname(path.realpath(__file__))
     target = fr'{dir_path}\Targets\Target.png'
     while True:
         try:    #region=(552, 302, 800, 470) for aimtrainer.io in fullscreen [1920x1080]  /// size of target is 5
@@ -20,5 +20,5 @@ if __name__ == '__main__':
         except TypeError:
             pass
 
-        if keyboard.is_pressed('k'):
+        if is_pressed('k'):
             quit()
